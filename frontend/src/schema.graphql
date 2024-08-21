@@ -1,0 +1,9 @@
+# Replace this with the Flexhire GraphQL API schema file!
+# The fastest way is to be logged into your flexhire account with API access
+# and then open this URL in the browser: https://flexhire.com/api/v2/schema
+# It should download the schema.graphql file.
+# Check https://flexhire.com/developer for more information.
+
+type Query {
+  field: String
+}
