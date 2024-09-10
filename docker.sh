@@ -17,4 +17,9 @@ else
     fi
 fi
 
-docker run -it --name $NAME --user flexhire -p 3000:3000 -p 8080:8080 -v .:/workspace flexhire-engineering-test bash
+if docker ps -a --format '{{.Names}}' | grep -Eq "^${NAME}\$"; then
+    echo "Container $NAME already exists. Removing it."
+    docker rm -f "$NAME"
+fi
+
+docker run -it --name $NAME --user flexhire -p 3000:3000 -p 8080:8080 -v $(pwd):/workspace flexhire-engineering-test bash
